@@ -1,0 +1,22 @@
+.card-img,
+.card-img-top {
+  min-height: 170px;
+  max-height: 170px;
+}
+
+/* img.card-img-top{
+  min-height: 170px;
+    object-fit: cover;
+    max-height: 170px;
+} */
+span {
+  font-size: 14px;
+}
+
+button {
+  font-size: 14px;
+}
+
+h5.card-title {
+  font-size: 16px;
+}

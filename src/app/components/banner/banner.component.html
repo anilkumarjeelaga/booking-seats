@@ -1,0 +1,15 @@
+<!-- <section>
+  <div class="senior banner" *ngFor="let landingImg of bannerInfo">
+    <img class="img-fluid" alt={{landingImg.bannerAlt}} title="{{landingImg.bannerTitle}}" src="landingImg.bannerImg">
+  </div>
+</section> -->
+<!-- <section>
+  <div class="Seminor-banner">
+    <img class="img-fluid" alt="" title="" src="../../../assets/images/banner//event-banner-5.jpeg">
+  </div>
+</section> -->
+<section>
+  <div class="seminor-banner" *ngFor="let landingImg of bannerInfo">
+    <img src="{{landingImg.bannerImg}}" alt="{{landingImg.bannerAlt}}" title="{{landingImg.bannerTitle}}">
+  </div>
+</section>

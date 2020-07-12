@@ -1,0 +1,16 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bg-light {
+  background-color: #5d6d7d !important;
+}
+
+.navbar-light .navbar-brand {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+div#navbarSupportedContent {
+  justify-content: flex-end;
+}

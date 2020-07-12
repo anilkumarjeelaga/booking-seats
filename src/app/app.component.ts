@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'routing-demo';
+  public Title = "Routing-Navigation"
 }

@@ -1,0 +1,50 @@
+<app-header></app-header>
+<app-banner></app-banner>
+<!-- eventsInfo | eventSearch: { eventName: searchText } as result -->
+<ng-container *ngIf="eventsInfo | eventSearch: { eventName:searchText  } as result">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 py-3" *ngFor="let eventBlock of result; let i = index">
+        <div class="card event-card">
+
+          <img src="{{ eventBlock.eventImg }}" class="card-img-top" alt="{{ eventBlock.eventPlaceholder }}" />
+
+          <div class="card-body">
+            <div class="event-booking-block">
+              <h5 class="card-title h4 text-success">{{ eventBlock.eventName }}</h5>
+              <p class="card-text">
+                <span>Date </span>{{ eventBlock.eventDate | date }} |
+                {{ eventBlock.eventLocation }}
+              </p>
+              <p class="card-text">
+                <span>Event Seats : </span><span class="event-seats-count-transfer">{{
+                  eventBlock.eventSeats
+                }}</span>
+              </p>
+            </div>
+            <button (click)="onSelect($event)" *ngIf="eventBlock.eventSeats > 0" class="btn btn-success">
+              <span class="d-none">{{ i + 1 }}</span>{{ eventBlock.eventBookNow }}
+            </button>
+            <button *ngIf="eventBlock.eventSeats == 0" class="btn btn-sold-out btn-danger" disabled>
+              <span class="d-none">{{ i + 1 }}</span>{{ eventBlock.eventBookNow }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="result.length === 0">
+      <div class="col-12">
+        <div class="noResultsFound text-center">
+          <p class="font-weight-bold">No Results Found</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ng-container>
+<app-footer></app-footer>
+<!-- <form class="form-inline my-2 my-lg-0">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form> -->
